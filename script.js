@@ -213,11 +213,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // -----------------------------------------------------
    
+    
+    // -----------------------------------------------------
     // 4. CHAT ASSISTANT
     // -----------------------------------------------------
 
     async function sendMessage(messageText) {
-        const message = messageText.trim();
+        const message = (messageText || "").trim();
 
         if (!message || isWaitingForReply) return;
 
@@ -229,7 +231,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const typingIndicator = showTypingIndicator();
 
         try {
-            // Connect to the live Python backend on Render.
             const response = await fetch(
                 "https://falconai-0n58.onrender.com/api/chat",
                 {
@@ -244,49 +245,65 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             );
 
-            if (!response.ok) {
-                throw new Error(
-                    `Server returned status ${response.status}`
-                );
-            }
-
             const data = await response.json();
 
-            if (!data.reply) {
+            if (!response.ok) {
                 throw new Error(
-                    "The server returned no assistant reply."
+                    data.error || `Server error: ${response.status}`
                 );
             }
 
-            if (typingIndicator) typingIndicator.remove();
+            if (!data.reply) {
+                throw new Error("The server returned no reply.");
+            }
 
             addMessage(data.reply, "assistant");
 
         } catch (error) {
             console.error("Chat request failed:", error);
 
-            if (typingIndicator) typingIndicator.remove();
-
-            // Show an error instead of a predefined demo answer.
             addMessage(
-                "Sorry, I couldn't connect to the AI service. " +
-                "Please try again in a moment.",
+                "Sorry, I couldn't connect to the AI service. Please try again.",
                 "assistant"
             );
 
         } finally {
+            if (typingIndicator) typingIndicator.remove();
+
             setLoading(false);
 
             if (chatInput) chatInput.focus();
         }
     }
 
+    // Prevent normal browser form submission and page refresh.
     if (chatForm) {
-        chatForm.addEventListener("submit", event => {
+        chatForm.addEventListener("submit", function (event) {
             event.preventDefault();
+            event.stopPropagation();
 
             if (chatInput) {
                 sendMessage(chatInput.value);
+            }
+        });
+    } else {
+        console.error(
+            'Chat form not found. Check that index.html contains id="chat-form".'
+        );
+    }
+
+    // Handle the Send button directly as an additional safeguard.
+    if (sendButton) {
+        sendButton.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            if (chatForm && chatInput) {
+                if (typeof chatForm.requestSubmit === "function") {
+                    // Use the normal form handler without reloading the page.
+                    chatForm.requestSubmit();
+                } else {
+                    sendMessage(chatInput.value);
+                }
             }
         });
     }
