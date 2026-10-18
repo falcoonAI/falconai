@@ -212,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // -----------------------------------------------------
+   
     // 4. CHAT ASSISTANT
     // -----------------------------------------------------
 
@@ -228,26 +229,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const typingIndicator = showTypingIndicator();
 
         try {
-            // Send the message to the Python backend.
-            const response = await fetch("/api/chat", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    message: message,
-                    student: studentInfo
-                })
-            });
+            // Connect to the live Python backend on Render.
+            const response = await fetch(
+                "https://falconai-0n58.onrender.com/api/chat",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        student: studentInfo
+                    })
+                }
+            );
 
             if (!response.ok) {
-                throw new Error(`Server returned status ${response.status}`);
+                throw new Error(
+                    `Server returned status ${response.status}`
+                );
             }
 
             const data = await response.json();
 
             if (!data.reply) {
-                throw new Error("The server returned no assistant reply.");
+                throw new Error(
+                    "The server returned no assistant reply."
+                );
             }
 
             if (typingIndicator) typingIndicator.remove();
@@ -259,10 +267,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (typingIndicator) typingIndicator.remove();
 
-            // Temporary offline response for the frontend demo.
-            // Real financial guidance will come from the Python backend.
+            // Show an error instead of a predefined demo answer.
             addMessage(
-                getDemoReply(message),
+                "Sorry, I couldn't connect to the AI service. " +
+                "Please try again in a moment.",
                 "assistant"
             );
 
