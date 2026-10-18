@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentFinanceAI — Chat</title>
+  <link rel="stylesheet" href="chat-page.css">
+  <script src="chat-page.js" defer></script>
+</head>
+<body>
+  <header class="chat-header">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">S</span>
+      <span>Student<span class="cyan">FinanceAI</span></span>
+    </a>
+    <a class="back-link" href="index.html">← Home</a>
+  </header>
+
+  <main class="chat-layout">
+    <section class="chat-heading">
+      <div class="status"><span></span> YOUR PERSONAL FINANCIAL GUIDE</div>
+      <h1>How can I help you today?</h1>
+      <p>Ask about tuition fees, student loans, international transfers, or currencies.</p>
+    </section>
+
+    <section class="chat-panel">
+      <div id="chat-messages" class="chat-messages" aria-live="polite">
+        <div class="message assistant">
+          <div class="message-label">StudentFinanceAI</div>
+          <div class="bubble">
+            Hello! Welcome to StudentFinanceAI. Which country are you planning to study in, and what financial question can I help you with?
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <textarea
+          id="chat-input"
+          placeholder="Ask about your financial situation..."
+          rows="1"
+          maxlength="2000"
+          required
+          aria-label="Your message"
+        ></textarea>
+        <button id="send-button" type="submit">Send ↑</button>
+      </form>
+
+      <p class="disclaimer">
+        AI guidance can make mistakes. Verify financial details independently.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
