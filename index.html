@@ -7,11 +7,9 @@
     <meta name="description" content="StudentFinanceAI helps international students explore tuition payments, student loans, remittances, and multi-currency options.">
     <title>StudentFinanceAI | Your Financial Future</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
-
     <!-- Navigation Bar -->
     <header class="site-header">
         <nav class="navbar container">
@@ -20,13 +18,13 @@
                 <span>Student<span class="brand-accent">Finance</span>AI</span>
             </a>
 
-            <button class="menu-toggle" id="menuToggle"
+            <button class="menu-toggle" id="menu-toggle"
                     type="button" aria-label="Toggle navigation"
                     aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
 
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links" id="navigation">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#features" class="nav-link">Solutions</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
@@ -36,16 +34,13 @@
         </nav>
     </header>
 
-
     <main>
-
         <!-- Hero Section -->
         <section class="hero section" id="home">
             <div class="hero-glow hero-glow-one"></div>
             <div class="hero-glow hero-glow-two"></div>
 
             <div class="hero-grid container">
-
                 <div class="hero-content">
                     <div class="eyebrow">
                         <span class="status-dot"></span>
@@ -80,8 +75,6 @@
                     </div>
                 </div>
 
-
-                <!-- AI Illustration Area -->
                 <div class="hero-visual" aria-label="AI financial assistant illustration">
                     <div class="visual-orbit orbit-one"></div>
                     <div class="visual-orbit orbit-two"></div>
@@ -98,12 +91,10 @@
                     <div class="ai-core">
                         <div class="core-ring ring-one"></div>
                         <div class="core-ring ring-two"></div>
-
                         <div class="core-symbol">
                             <span class="symbol-top">S</span>
                             <span class="symbol-bottom">AI</span>
                         </div>
-
                         <div class="core-caption">
                             INTELLIGENCE FOR YOUR JOURNEY
                         </div>
@@ -129,7 +120,6 @@
                         ✧ One journey. Better-informed decisions.
                     </div>
                 </div>
-
             </div>
 
             <div class="hero-bottom container">
@@ -139,11 +129,9 @@
             </div>
         </section>
 
-
         <!-- Financial Solutions -->
         <section class="features section" id="features">
             <div class="container">
-
                 <div class="section-heading">
                     <span class="eyebrow">
                         <span class="status-dot"></span>
@@ -164,7 +152,6 @@
                 </div>
 
                 <div class="feature-grid">
-
                     <article class="feature-card">
                         <div class="feature-icon icon-blue">▤</div>
                         <span class="feature-number">01 / PLANNING</span>
@@ -174,7 +161,7 @@
                             and explore tuition payment methods.
                         </p>
                         <a href="#assistant" class="feature-link"
-                           data-topic="tuition">
+                           data-prompt="Help me understand tuition payment options and budgeting.">
                             Explore tuition options ↗
                         </a>
                     </article>
@@ -188,7 +175,7 @@
                             and compare fees and exchange rates.
                         </p>
                         <a href="#assistant" class="feature-link"
-                           data-topic="remittance">
+                           data-prompt="How can I compare international remittance options and transfer fees?">
                             Explore transfer options ↗
                         </a>
                     </article>
@@ -202,7 +189,7 @@
                             repayment terms, and application requirements.
                         </p>
                         <a href="#assistant" class="feature-link"
-                           data-topic="loans">
+                           data-prompt="Help me understand international student loan options and eligibility.">
                             Explore funding options ↗
                         </a>
                     </article>
@@ -216,20 +203,17 @@
                             and available account options.
                         </p>
                         <a href="#assistant" class="feature-link"
-                           data-topic="currency">
+                           data-prompt="Help me compare multi-currency options and currency conversion costs.">
                             Explore currency options ↗
                         </a>
                     </article>
-
                 </div>
             </div>
         </section>
 
-
         <!-- How It Works -->
         <section class="how-it-works section" id="how-it-works">
             <div class="container">
-
                 <div class="section-heading">
                     <span class="eyebrow">
                         <span class="status-dot"></span>
@@ -278,13 +262,10 @@
             </div>
         </section>
 
-
         <!-- AI Chat Assistant -->
         <section class="assistant-section section" id="assistant">
             <div class="container">
-
                 <div class="assistant-layout">
-
                     <div class="assistant-intro">
                         <span class="eyebrow">
                             <span class="status-dot"></span>
@@ -315,10 +296,8 @@
                         </p>
                     </div>
 
-
                     <!-- Chat Window -->
                     <div class="chat-panel">
-
                         <div class="chat-header">
                             <div class="chat-brand">
                                 <div class="chat-avatar">S</div>
@@ -333,7 +312,7 @@
 
                             <button type="button"
                                     class="icon-button"
-                                    id="clearChat"
+                                    id="clear-chat"
                                     aria-label="Clear conversation"
                                     title="Clear conversation">
                                 ↻
@@ -345,70 +324,61 @@
                         </div>
 
                         <div class="chat-messages"
-                             id="chatMessages"
+                             id="chat-messages"
                              aria-live="polite"
                              aria-label="Chat conversation">
+                            <div class="chat-message assistant">
+                                <div class="message-bubble">
+                                    Hello! Welcome to StudentFinanceAI.
 
-                            <div class="message assistant-message">
-                                <div class="message-avatar">S</div>
+                                    I can help you explore tuition payments,
+                                    international transfers, student loans,
+                                    and multi-currency options.
 
-                                <div class="message-content">
-                                    <span class="message-sender">
-                                        StudentFinance AI
-                                    </span>
-
-                                    <div class="message-bubble">
-                                        Hello! Welcome to StudentFinanceAI.
-                                        <br><br>
-                                        I can help you explore tuition payments,
-                                        international transfers, student loans,
-                                        and multi-currency options.
-                                        <br><br>
-                                        Which country are you planning to study
-                                        in, and what would you like help with?
-                                    </div>
-
-                                    <span class="message-time">WELCOME</span>
+                                    Which country are you planning to study
+                                    in, and what would you like help with?
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Suggested Questions -->
                         <div class="suggestion-area">
                             <span class="suggestion-label">QUICK START</span>
 
                             <div class="suggestion-buttons">
-                                <button type="button" class="suggestion-chip"
-                                    data-message="Help me understand tuition payment options.">
+                                <button type="button"
+                                        class="suggestion-chip"
+                                        data-prompt="Help me understand tuition payment options.">
                                     Tuition fees
                                 </button>
 
-                                <button type="button" class="suggestion-chip"
-                                    data-message="How can I explore student loan options?">
+                                <button type="button"
+                                        class="suggestion-chip"
+                                        data-prompt="How can I explore student loan options?">
                                     Student loans
                                 </button>
 
-                                <button type="button" class="suggestion-chip"
-                                    data-message="What should I compare before sending money internationally?">
+                                <button type="button"
+                                        class="suggestion-chip"
+                                        data-prompt="How can I compare international money transfer options?">
                                     Send money
                                 </button>
 
-                                <button type="button" class="suggestion-chip"
-                                    data-message="Help me understand multi-currency options.">
+                                <button type="button"
+                                        class="suggestion-chip"
+                                        data-prompt="Help me understand multi-currency options.">
                                     Currencies
                                 </button>
                             </div>
                         </div>
 
-
                         <!-- Message Input -->
-                        <form class="chat-input-area" id="chatForm">
-                            <label class="visually-hidden" for="chatInput">
+                        <form class="chat-input-area" id="chat-form">
+                            <label class="visually-hidden" for="chat-input">
                                 Type your financial question
                             </label>
 
-                            <textarea id="chatInput"
+                            <textarea id="chat-input"
                                       name="message"
                                       rows="1"
                                       maxlength="2000"
@@ -417,7 +387,7 @@
 
                             <button type="submit"
                                     class="send-button"
-                                    id="sendButton"
+                                    id="send-button"
                                     aria-label="Send message">
                                 ↑
                             </button>
@@ -427,17 +397,14 @@
                             <span>AI guidance can make mistakes.</span>
                             <span>Verify financial details independently.</span>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
 
-
         <!-- Student Profile Form -->
         <section class="student-profile section" id="student-profile">
             <div class="container">
-
                 <div class="section-heading">
                     <span class="eyebrow">
                         <span class="status-dot"></span>
@@ -456,8 +423,7 @@
                     </p>
                 </div>
 
-                <form class="profile-form" id="studentForm">
-
+                <form class="profile-form" id="student-form">
                     <div class="form-heading">
                         <div class="form-heading-icon">◎</div>
                         <div>
@@ -467,7 +433,6 @@
                     </div>
 
                     <div class="form-grid">
-
                         <div class="form-group">
                             <label for="homeCountry">Your home country</label>
                             <select id="homeCountry" name="homeCountry" required>
@@ -522,21 +487,11 @@
                                     name="financialGoal"
                                     required>
                                 <option value="">Select financial goal</option>
-                                <option value="Tuition and budgeting">
-                                    Tuition and budgeting
-                                </option>
-                                <option value="International remittances">
-                                    International remittances
-                                </option>
-                                <option value="Student loans">
-                                    Student loans
-                                </option>
-                                <option value="Multi-currency options">
-                                    Multi-currency options
-                                </option>
-                                <option value="General financial guidance">
-                                    General financial guidance
-                                </option>
+                                <option value="Tuition and budgeting">Tuition and budgeting</option>
+                                <option value="International remittances">International remittances</option>
+                                <option value="Student loans">Student loans</option>
+                                <option value="Multi-currency options">Multi-currency options</option>
+                                <option value="General financial guidance">General financial guidance</option>
                             </select>
                         </div>
                     </div>
@@ -556,16 +511,13 @@
                          class="form-notice"
                          role="status"
                          aria-live="polite"></div>
-
                 </form>
             </div>
         </section>
 
-
         <!-- About Section -->
         <section class="about-section section" id="about">
             <div class="container about-content">
-
                 <span class="eyebrow">
                     <span class="status-dot"></span>
                     OUR PURPOSE
@@ -588,22 +540,17 @@
                 </a>
             </div>
         </section>
-
     </main>
-
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
-
             <a href="#home" class="brand">
                 <span class="brand-icon">S</span>
                 <span>Student<span class="brand-accent">Finance</span>AI</span>
             </a>
 
-            <p>
-                Financial guidance for international students.
-            </p>
+            <p>Financial guidance for international students.</p>
 
             <p class="footer-disclaimer">
                 This project provides educational guidance, not guaranteed
@@ -615,23 +562,23 @@
                 <span>© 2026 StudentFinanceAI</span>
                 <a href="#home">Back to top ↑</a>
             </div>
-
         </div>
     </footer>
 
-
-    <!-- Future JavaScript Pop-up -->
+    <!-- Information Modal -->
     <div class="modal-overlay"
-         id="infoModal"
+         id="student-modal"
          role="dialog"
          aria-modal="true"
          aria-labelledby="modalTitle"
-         aria-hidden="true">
+         aria-hidden="true"
+         hidden>
 
         <div class="modal-box">
             <button type="button"
                     class="modal-close"
-                    id="closeModal"
+                    id="close-modal"
+                    data-close-modal
                     aria-label="Close dialog">
                 ×
             </button>
@@ -652,9 +599,6 @@
         </div>
     </div>
 
-
-    <!-- JavaScript will be connected in a later step -->
     <script src="script.js"></script>
-    
 </body>
 </html>
